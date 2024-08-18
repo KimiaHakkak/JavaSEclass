@@ -11,7 +11,7 @@ import java.util.List;
 public class ProductDa implements AutoCloseable{
     private Connection connection;
     private PreparedStatement preparedStatement;
-    JdbcProvider jdbcProvider = new JdbcProvider();
+    private JdbcProvider jdbcProvider = new JdbcProvider();
 
 
     public ProductDa() throws SQLException {
@@ -53,7 +53,7 @@ public class ProductDa implements AutoCloseable{
 
     public List<Product> findAll() throws SQLException {
         preparedStatement = connection.prepareStatement(
-                "SELECT * FROM PERSON ORDER BY ID"
+                "SELECT * FROM PRODUCT ORDER BY ID"
         );
         ResultSet resultSet = preparedStatement.executeQuery();
 

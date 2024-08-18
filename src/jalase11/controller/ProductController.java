@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ProductController implements Initializable{
+public class ProductController implements Initializable {
     private Validation validation = new Validation();
 
     @FXML
