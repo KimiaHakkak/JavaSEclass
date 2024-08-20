@@ -1,6 +1,7 @@
 package jalase11.model.entity;
 
 import com.google.gson.Gson;
+import jalase11.model.entity.Brand;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

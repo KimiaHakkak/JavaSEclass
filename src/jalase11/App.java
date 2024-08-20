@@ -13,7 +13,7 @@ public class App extends Application {
 
         primaryStage.setScene(scene);
 
-        primaryStage.setTitle("MFT");
+        primaryStage.setTitle("PRODUCT");
         primaryStage.show();
     }
 }

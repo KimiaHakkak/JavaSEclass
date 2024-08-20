@@ -1,6 +1,6 @@
 CREATE TABLE PRODUCT
 (
-    id    number key number,
+    id    number primary key,
     name  nvarchar2(20),
     brand nvarchar2(20),
     price number,

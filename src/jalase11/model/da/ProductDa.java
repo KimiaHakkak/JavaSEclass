@@ -8,10 +8,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductDa implements AutoCloseable{
+public class ProductDa  implements AutoCloseable{
     private Connection connection;
     private PreparedStatement preparedStatement;
-    private JdbcProvider jdbcProvider = new JdbcProvider();
+    private jalase11.model.utils.JdbcProvider jdbcProvider = new JdbcProvider();
 
 
     public ProductDa() throws SQLException {
@@ -70,7 +70,7 @@ public class ProductDa implements AutoCloseable{
                             .count(resultSet.getInt("COUNT"))
                             .build();
             productList.add(product);
-}
+        }
         return productList;
     }
 
