@@ -10,4 +10,12 @@ public class Validation {
             throw new Exception("Invalid Name");
         }
     }
+
+    public String ageValidator(String age) throws Exception {
+        if(Pattern.matches("^[0-90\\s]{3,30}$", age)){
+            return age;
+        }else{
+            throw new Exception("Invalid Age");
+        }
+    }
 }

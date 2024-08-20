@@ -8,18 +8,18 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductDa  implements AutoCloseable{
-    private Connection connection;
-    private PreparedStatement preparedStatement;
-    private jalase11.model.utils.JdbcProvider jdbcProvider = new JdbcProvider();
 
+public class ProductDa  implements AutoCloseable{
+
+    private final Connection connection;
+    private PreparedStatement preparedStatement;
 
     public ProductDa() throws SQLException {
-        connection = jdbcProvider.getConnection();
+        connection = JdbcProvider.getJdbcProvider().getConnection();
     }
 
     public void save(Product product) throws SQLException {
-        product.setId(jdbcProvider.getNextId("PRODUCT_SEQ"));
+        product.setId(JdbcProvider.getJdbcProvider().getNextId("PRODUCT_SEQ"));
         preparedStatement = connection.prepareStatement(
                 "INSERT INTO PRODUCT VALUES(?,?,?,?,?)"
         );

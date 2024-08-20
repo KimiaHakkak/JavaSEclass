@@ -1,5 +1,6 @@
 package jalase11.model.utils;
 
+import lombok.Getter;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.sql.Connection;
@@ -8,12 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JdbcProvider {
-    private BasicDataSource basicDataSource = new BasicDataSource();
+    @Getter
+    private final static JdbcProvider jdbcProvider = new JdbcProvider();
+    private final static BasicDataSource basicDataSource = new BasicDataSource();
+
+    private JdbcProvider() {
+    }
 
     public Connection getConnection() throws SQLException {
         basicDataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
         basicDataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-        basicDataSource.setUsername("kimia");
+        basicDataSource.setUsername("javase");
         basicDataSource.setPassword("java123");
         basicDataSource.setMinIdle(5);
         basicDataSource.setMaxTotal(20);
