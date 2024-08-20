@@ -1,22 +1,25 @@
-package jalase9.entity;
+package jalase12.model.entity;
 
+import com.google.gson.Gson;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @SuperBuilder
 
 public class Product {
     private int id;
     private String name;
+    private Brand brand;
+    private int price;
     private int count;
-    private double price;
-    private double total;
-
+    private Person owner;
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }
